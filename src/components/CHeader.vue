@@ -16,7 +16,7 @@
                 <v-icon>shopping_cart</v-icon>
             </v-badge>
         </v-btn>
-        <v-text-field v-if="isHome" @click="setStatusDialog(true)" slot="extension" hide-details append-icon="mic" text
+        <v-text-field v-if="isHome" @click="search()" slot="extension" hide-details append-icon="mic" text
             label="Search" prepend-inner-icon="search" solo-inverted>
         </v-text-field>
     </v-app-bar>
@@ -28,8 +28,14 @@ export default {
     methods: {
         ...mapActions({
             setSideBar: 'setSideBar',
-            setStatusDialog: 'dialog/setStatus'
-        })
+            setStatusDialog: 'dialog/setStatus',
+            setComponent: 'dialog/setComponent'
+        }),
+        search(){
+            this.setStatusDialog(true)
+            this.setComponent('search')
+            this.setSideBar(false)
+        }
     },
     computed: {
         ...mapGetters({
