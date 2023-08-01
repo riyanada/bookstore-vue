@@ -10,9 +10,10 @@
         <v-toolbar-title class="white--text">Bookstore</v-toolbar-title>
         <v-spacer></v-spacer>
 
-        <v-btn icon>
+        <v-btn icon @click="cart()">
             <v-badge left overlap color="orange">
                 <span slot="badge" v-if="countCart > 0">{{ countCart }}</span>
+                <span slot="badge" v-else>0</span>
                 <v-icon>shopping_cart</v-icon>
             </v-badge>
         </v-btn>
@@ -34,6 +35,11 @@ export default {
         search(){
             this.setStatusDialog(true)
             this.setComponent('search')
+            this.setSideBar(false)
+        },
+        cart(){
+            this.setStatusDialog(true)
+            this.setComponent('cart')
             this.setSideBar(false)
         }
     },

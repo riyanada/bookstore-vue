@@ -43,6 +43,7 @@ import CAlert from '@/components/CAlert.vue'
 import Search from '@/views/SearchView.vue'
 import Login from '@/views/LoginView.vue'
 import Register from '@/views/RegisterView.vue'
+import Cart from '@/views/CartView.vue'
 
 export default {
   name: "App",
@@ -53,7 +54,8 @@ export default {
     CAlert,
     Search,
     Login,
-    Register
+    Register,
+    Cart,
   },
   methods: {
     ...mapActions({

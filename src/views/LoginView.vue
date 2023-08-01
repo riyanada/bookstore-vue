@@ -47,7 +47,7 @@ export default {
     computed: {
         ...mapGetters({
             user: 'auth/user',
-            // prevUrl: 'prevUrl'
+            prevUrl: 'prevUrl'
         })
     },
     methods: {
@@ -76,10 +76,8 @@ export default {
                                 type: 'warning',
                             })
                             // this.setStatusDialog(false)
-                            // if (this.prevUrl.length > 0) {
-                            //     this.$router.push(this.prevUrl)
-                            //     this.close()
-                            // }
+                            if (this.prevUrl.length > 0) this.$router.push(this.prevUrl)
+                            this.close()
                         } else {
                             this.setAlert({
                                 status: true,

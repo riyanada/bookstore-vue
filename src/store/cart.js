@@ -22,15 +22,15 @@ export default {
                 cover: payload.cover,
                 price: payload.price,
                 weight: payload.weight,
-                quantity: ++payload.quantity
+                quantity: payload.quantity
             });
             if (payload.quantity <= 0) {
                 state.carts.splice(idx, 1)
             }
         },
-        // set: (state, payload) => {
-        //     state.carts = payload
-        // }
+        set: (state, payload) => {
+            state.carts = payload
+        }
     },
     actions: {
         add: ({ state, commit }, payload) => {
@@ -60,15 +60,15 @@ export default {
         count: (state) => {
             return state.carts.length
         },
-        // totalQuantity: (state) => {
-        //     return state.quantity
-        // },
-        // totalPrice: (state) => {
-        //     let sum = 0;
-        //     state.carts.forEach(state => {
-        //         sum += (state.price * state.quantity)
-        //     });
-        //     return sum;
-        // }
+        totalQuantity: (state) => {
+            return state.quantity
+        },
+        totalPrice: (state) => {
+            let sum = 0;
+            state.carts.forEach(state => {
+                sum += (state.price * state.quantity)
+            });
+            return sum;
+        }
     }
 }
