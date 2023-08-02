@@ -52,6 +52,24 @@ const router = new Router({
       name: 'checkout',
       component: () => import('../views/CheckoutView.vue'),
       meta: { auth: true }
+    },
+    {
+      path: '/payment',
+      name: 'payment',
+      component: () => import('../views/PaymentView.vue'),
+      meta: { auth: true }
+    },
+    {
+      path: '/my-order',
+      name: 'my-order',
+      component: () => import('../views/MyOrder.vue'),
+      meta: { auth: true }
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: () => import('../views/ProfileView.vue'),
+      meta: { auth: true }
     }
   ]
 })
